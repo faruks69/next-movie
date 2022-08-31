@@ -1,3 +1,5 @@
+export type MediaType = 'all' | 'movie' | 'tv';
+
 export interface Childs {
   backdrop_path: string;
   poster_path: string;

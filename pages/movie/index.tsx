@@ -32,6 +32,7 @@ const Movie = () => {
         page={page}
         total_pages={total_pages}
         loadMore={loadMore}
+        media_type="movie"
       />
     </>
   );

@@ -3,16 +3,19 @@ import { useRouter } from 'next/router';
 import ReactPaginate from 'react-paginate';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
+import { MediaType } from '@/model/movie';
 import { ItemGrid, PageHeader, Meta } from '@/components';
 import { searchAll, searchMovie, searchTV } from '@/ultis/tmdbApi';
+import { mediaTypes } from '@/ultis/constants';
 
 interface Props {
-  type: string;
+  type: MediaType;
+  keyword: string;
   page: number;
   data?: any;
 }
 
-const SearchPage: NextPage<Props> = ({ data, page, type }) => {
+const SearchPage: NextPage<Props> = ({ data, page, type, keyword }) => {
   const router = useRouter();
   const handlePageChange = ({ selected }: { selected: number }) => {
     const currentPage = selected + 1;
@@ -30,7 +33,7 @@ const SearchPage: NextPage<Props> = ({ data, page, type }) => {
         description="Search Movies or TV show by keyword"
         image="/preview.png"
       />
-      <PageHeader />
+      <PageHeader media_type={type} isSearchPage keyword={keyword} />
       <div className="container px-6">
         <ItemGrid items={data.results} />
       </div>
@@ -53,19 +56,19 @@ const SearchPage: NextPage<Props> = ({ data, page, type }) => {
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   try {
     const keyword = query.q as string;
-    const type = query.type;
+    const type = query.type as MediaType;
     const page = Number(query.page) || 1;
-    if (!keyword || !type) return { notFound: true };
+    if (!keyword || !mediaTypes.includes(type)) return { notFound: true };
 
     let data;
     switch (type) {
-      case 'All':
+      case 'all':
         data = await searchAll(keyword, page);
         break;
-      case 'Movie':
+      case 'movie':
         data = await searchMovie(keyword, page);
         break;
-      case 'TV':
+      case 'tv':
         data = await searchTV(keyword, page);
         break;
     }
@@ -73,6 +76,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     return {
       props: {
         page,
+        keyword,
         type,
         data,
       },

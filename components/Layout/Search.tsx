@@ -1,15 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { AiOutlineSearch } from 'react-icons/ai';
 import cn from 'classnames';
 
+import { MediaType } from '@/model/movie';
 import { mediaTypes } from '@/ultis/constants';
 import { Input } from '@/components';
 
 const Search = () => {
   const router = useRouter();
   const [value, setValue] = useState('');
-  const [typeFillter, setTypeFillter] = useState<string>('All');
+  const [typeFillter, setTypeFillter] = useState<MediaType>('all');
   const onChange = (e: any) => setValue(e.target.value);
   const handleSearch = () => {
     router.push({
@@ -19,8 +20,17 @@ const Search = () => {
         q: value,
       },
     });
-    setValue('');
   };
+
+  const type = router.query.type as MediaType;
+  const q = router.query.q as string;
+  useEffect(() => {
+    if (type && q) {
+      setValue(q);
+      setTypeFillter(type);
+    }
+  }, [type, q]);
+
   return (
     <div className="w-full relative rounded-2xl overflow-hidden">
       <Input
@@ -46,6 +56,7 @@ const Search = () => {
                 'transition hover-hover:hover:text-main',
                 '[&:not(:last-child)]:after:content-[""] [&:not(:last-child)]:after:absolute [&:not(:last-child)]:after:right-0',
                 '[&:not(:last-child)]:after:w-px [&:not(:last-child)]:after:inset-y-4 [&:not(:last-child)]:after:bg-white',
+                mediaType === 'tv' ? 'uppercase' : 'capitalize',
                 {
                   'text-main pointer-events-none': mediaType === typeFillter,
                 }

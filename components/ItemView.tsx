@@ -1,3 +1,4 @@
+import { NextPage } from 'next';
 import { ClipLoader } from 'react-spinners';
 
 import { MovieSliceParams } from '@/redux/movieSlice';
@@ -5,20 +6,21 @@ import { ItemGrid, PageHeader, Button } from '@/components';
 
 interface Props extends MovieSliceParams {
   loadMore: () => void;
+  media_type: 'movie' | 'tv';
 }
 
-const ItemView = ({
+const ItemView: NextPage<Props> = ({
   loading,
   items,
   loadingMore,
   page,
   total_pages,
   loadMore,
-}: Props) => {
+  media_type,
+}) => {
   return (
     <>
-      {/* <Meta title="" description="Views all the movies" /> */}
-      <PageHeader />
+      <PageHeader media_type={media_type} />
 
       <div className="container px-6">
         {loading ? (
