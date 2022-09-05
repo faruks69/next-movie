@@ -107,7 +107,7 @@ const Watch: NextPage<Props> = ({ data, seasons }) => {
                       transition-[background-color] duration-300 ease-[ease] cursor-pointer"
                         >
                           <div className="w-8 flex-center-center">
-                            <p className="text-[18px] font-medium">
+                            <p className="text-lg font-medium">
                               {episode.episode_number}
                             </p>
                           </div>
@@ -118,7 +118,7 @@ const Watch: NextPage<Props> = ({ data, seasons }) => {
                           />
                           <div className="ml-4">
                             <p
-                              className="text-[18px] font-medium hover-hover:group-hover:text-main
+                              className="text-lg font-medium hover-hover:group-hover:text-main
                         transition-[color] duration-300 ease-[ease]"
                             >
                               {episode.name}

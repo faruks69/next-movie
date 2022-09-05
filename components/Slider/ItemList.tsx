@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar, Mousewheel, FreeMode } from 'swiper';
+import cn from 'classnames';
 
 import ItemCard from './ItemCard';
 import { MovieItemProps } from '@/model/movie';
@@ -13,8 +14,7 @@ interface Props {
 
 const ItemList = ({ items, vertical = false }: Props) => {
   const styleSlide = {
-    width: vertical ? '100%' : '15%',
-    // height: '15%',
+    // width: vertical ? '100%' : '15%',
   };
   return (
     <Swiper
@@ -36,7 +36,11 @@ const ItemList = ({ items, vertical = false }: Props) => {
       style={{ maxHeight: '100%' }}
     >
       {items.map((item) => (
-        <SwiperSlide key={item.id} style={styleSlide}>
+        <SwiperSlide
+          key={item.id}
+          style={styleSlide}
+          className={cn({ '!w-[15%] lg:!w-[30%] sm:!w-2/5': !vertical })}
+        >
           <ItemCard item={item} />
         </SwiperSlide>
       ))}

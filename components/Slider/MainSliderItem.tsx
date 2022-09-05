@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 import Cn from 'classnames';
 
 import { useAppDispatch } from '@/redux/hooks';
@@ -35,13 +34,13 @@ const MainSliderItem = ({ item, isActive }: Props) => {
       <div className="container relative flex-center-center">
         <div
           className={Cn(
-            '[&>*~*]:mt-12 px-12 w-[55%] [&>*]:transition-[transform,opacity] [&>*]:duration-[500ms,500ms] [&>*]:ease-[ease,ease]',
+            '[&>*~*]:mt-12 px-12 lg:w-full w-[55%] [&>*]:transition-[transform,opacity] [&>*]:duration-[500ms,500ms] [&>*]:ease-[ease,ease]',
             isActive
               ? 'scale-100 translate-y-0'
               : '[&>*]:opacity-0 [&>*]:translate-y-[-100px]'
           )}
         >
-          <h2 className="leading-none font-bold lg:text-[5rem] text-[4rem] delay-[300ms,300ms]">
+          <h2 className="leading-none font-bold text-[5rem] lg:text-[4rem] delay-[300ms,300ms]">
             {item.title}
           </h2>
           <Rating
@@ -61,15 +60,13 @@ const MainSliderItem = ({ item, isActive }: Props) => {
             </Button>
           </div>
         </div>
-        <div>
-          <Image
+        <div className="lg:hidden">
+          <img
             className={Cn(
-              'w-[400px] rounded-3xl transition-[transform] duration-700 ease-[ease]',
+              'w-[400px] rounded-3xl transition-[transform] duration-700 ease-[ease] shadow-[0_7px_29px_0_rgba(0,0,0,0.3)]',
               isActive ? 'scale-100' : 'scale-0'
             )}
             src={w500Image(item.poster_path)}
-            width={400}
-            height={600}
             alt=""
           />
         </div>

@@ -35,7 +35,7 @@ const Watch: NextPage<Props> = ({
       />
       <div className="container mt-28 px-6">
         <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-8">
+          <div className="col-span-9 lg:col-span-8">
             <div className="relative mb-3" style={{ paddingBottom: '56.25%' }}>
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
@@ -52,9 +52,9 @@ const Watch: NextPage<Props> = ({
               vote_average={episode.vote_average}
             />
           </div>
-          <div className="col-span-3">
-            <p className="text-[22px] font-medium">Other Episodes</p>
-            <div className="[&>*~*]:mt-6 max-h-[700px] overflow-y-auto">
+          <div className="col-span-3 lg:col-span-4">
+            <p className="text-2xl font-medium">Other Episodes</p>
+            <div className="[&>*~*]:mt-6 max-h-[45rem] overflow-y-auto">
               {seasons.map((season) => (
                 <div key={season.id} className="">
                   <div

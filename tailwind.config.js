@@ -6,6 +6,13 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    screens: {
+      lg: { max: '1023px' },
+      // => @media (max-width: 1023px) { ... }
+
+      sm: { max: '639px' },
+      // => @media (max-width: 639px) { ... }
+    },
     extend: {
       colors: {
         main: '#ff0000',

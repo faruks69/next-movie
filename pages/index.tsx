@@ -3,12 +3,16 @@ import { GetStaticProps, NextPage } from 'next';
 import { MainSlider, ItemSlider, Meta } from '@/components';
 import { getHomeData } from '@/ultis/tmdbApi';
 import { MovieItemProps } from '@/model/movie';
+// import useMobileDetect from '@/hooks/useMobileDetect';
 
 interface Props {
   data: { [id: string]: MovieItemProps[] };
 }
 
 const Home: NextPage<Props> = ({ data }) => {
+  // const { isMobile } = useMobileDetect();
+  // const isM = isMobile();
+
   return (
     <>
       <Meta
@@ -17,7 +21,7 @@ const Home: NextPage<Props> = ({ data }) => {
         image="/preview.png"
       />
 
-      <div style={{ minHeight: '1000px' }} className="">
+      <div className="">
         <MainSlider movieItems={data['Popular Movies']} />
         <div className="container px-6">
           {Object.keys(data).map((key) => (

@@ -14,10 +14,10 @@ const Modal = ({ isVisible, id, onClose, trailerEndPoint }: Props) => {
       id={id + ''}
       className={Cn(
         'fixed inset-0 z-20 overflow-auto bg-black/[40%] flex-center-center',
-        isVisible ? 'not-hidden' : 'hidden'
+        isVisible ? 'opacity-100 visible' : 'opacity-0 invisible'
       )}
     >
-      <div className="relative w-2/4 p-8 bg-body">
+      <div className="relative lg:w-4/5 w-1/2 p-8 bg-body">
         <iframe
           src={`https://www.youtube.com/embed/${trailerEndPoint}`}
           width="100%"

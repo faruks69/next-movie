@@ -17,11 +17,16 @@ const headerNav = [
 
 const NavbarLink = () => {
   return (
-    <div className="flex items-center h-full w-full">
-      <ul className="flex justify-between w-full">
+    <div
+      className="flex h-full w-full
+    sm:fixed sm:inset-x-0 sm:bottom-0 sm:h-20 sm:bg-stone-700 sm:shadow-[0_7px_29px_0_rgba(0,0,0,0.3)]"
+    >
+      <ul className="flex justify-between w-full h-full">
         {headerNav.map((item) => (
           <Link key={item.path} href={item.path}>
-            <a className="text-xl font-semibold">{item.display}</a>
+            <a className="flex-center-center w-[33%] text-xl font-semibold h-full">
+              {item.display}
+            </a>
           </Link>
         ))}
       </ul>

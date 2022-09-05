@@ -24,7 +24,7 @@ const ItemDetailView: NextPage<Props> = ({ data, casts, videos, similar }) => {
         style={{ backgroundImage: `url(${imageOriginal(data.backdrop_path)})` }}
       />
       <div className="relative container flex max-w-[1260px] px-8 mt-[-200px] mb-12">
-        <div className="flex-1">
+        <div className="flex-1 sm:hidden">
           <div
             className="bg-center bg-cover bg-no-repeat pt-[165%] rounded-3xl"
             style={{
@@ -32,22 +32,22 @@ const ItemDetailView: NextPage<Props> = ({ data, casts, videos, similar }) => {
             }}
           />
         </div>
-        <div className="w-[70%] pl-8 [&>*]:mb-8">
+        <div className="w-[70%] sm:w-full pl-8 sm:pl-0 [&>*]:mb-8">
           <h1 className="text-6xl font-bold">{data.title || data.name}</h1>
-          <div className="w-28">
+          <div className="w-28 lg:w-32 sm:w-36">
             <Rating rating={data.vote_average} size={30} />
           </div>
           <div className="text-[1.5rem]">
             <p>Release Date: {data.release_date}</p>
           </div>
-          <div className="[&>*~*]:ml-2">
+          <div className="grid grid-cols-4 lg:grid-cols-3 gap-2">
             {data.genres.map((genre) => (
-              <span
+              <p
                 key={genre.id}
-                className="px-6 py-2 border-2 border-solid border-white rounded-3xl font-semibold"
+                className="flex-center-center px-4 py-2 border-2 border-solid border-white rounded-3xl font-semibold"
               >
                 {genre.name}
-              </span>
+              </p>
             ))}
           </div>
           <p>{data.overview}</p>

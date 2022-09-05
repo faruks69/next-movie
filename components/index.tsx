@@ -13,7 +13,8 @@ import MainSlider from './Slider/MainSlider';
 import MainSliderItem from './Slider/MainSliderItem';
 import ItemSlider from './Slider/ItemSlider';
 import VideoItem from './Video/VideoItem';
-import Button from './buttons/Button';
+import Image from './General/Image';
+import Button from './General/Button';
 import Modal from './Modal';
 import Rating from './Rating';
 import ItemGrid from './ItemGrid';
@@ -38,6 +39,7 @@ export {
   MainSliderItem,
   ItemSlider,
   VideoItem,
+  Image,
   Button,
   Modal,
   Rating,

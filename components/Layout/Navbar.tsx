@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import Cn from 'classnames';
 
 import { NavbarLink, Search } from '@/components';
@@ -35,25 +34,25 @@ const Navbar = () => {
         isShrink ? 'bg-body h-headerShrinkHeight' : 'h-headerHeight'
       )}
     >
-      <div className="container h-full grid grid-cols-12 gap-12 grid-rows-1">
-        <div className="col-span-3">
+      <div className="container h-full grid grid-cols-12 gap-2 grid-rows-1">
+        <div className="col-span-3 sm:col-span-4">
           <div className="flex h-full">
             <Link href="/">
-              <a className="w-auto font-semibold text-4xl flex items-center">
+              <a className="w-auto font-semibold text-4xl sm:text-2xl flex items-center">
                 <div className="flex mr-2.5">
-                  <Image src="/icon.png" alt="" width={50} height={50} />
+                  <img className="w-12" src="/icon.png" alt="" />
                 </div>
                 <span>TV FILM</span>
               </a>
             </Link>
           </div>
         </div>
-        <div className="col-span-4">
+        <div className="col-span-4 lg:col-span-5 sm:col-span-8">
           <div className="flex h-full items-center">
             <Search />
           </div>
         </div>
-        <div className="col-span-3 col-end-12">
+        <div className="col-span-3 col-end-13 lg:col-span-4">
           <NavbarLink />
         </div>
       </div>

@@ -24,7 +24,7 @@ const AboutDetail = ({
 }: Props) => {
   return (
     <div className="[&>*~*]:mt-3">
-      <h2 className="text-[24px] font-bold leading-6">{title || name}</h2>
+      <h2 className="text-2xl font-bold leading-6">{title || name}</h2>
       <p>{overview}</p>
       {release_date && <p>Release Date: {release_date}</p>}
 

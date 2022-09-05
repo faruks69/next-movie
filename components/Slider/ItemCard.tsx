@@ -39,7 +39,7 @@ const ItemCard = ({ item }: Props) => {
               <FaPlayCircle size={40} />
             </Button>
           </div>
-          <p className="flex-center-center font-bold text-[18px]">
+          <p className="flex-center-center font-bold text-lg">
             {item.title || item.name}
           </p>
         </div>

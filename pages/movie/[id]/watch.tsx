@@ -18,9 +18,9 @@ const Watch: NextPage<Props> = ({ data, similar }) => {
         description="Watch the movie"
         image={imageOriginal(data.backdrop_path)}
       />
-      <div className="container mt-28 px-6">
-        <div className="grid grid-cols-12">
-          <div className="col-span-8">
+      <div className="container mt-28 mb-28 px-6">
+        <div className="grid grid-cols-12 lg:gap-8">
+          <div className="col-span-9 lg:col-span-8">
             <div className="relative mb-3" style={{ paddingBottom: '56.25%' }}>
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
@@ -38,9 +38,9 @@ const Watch: NextPage<Props> = ({ data, similar }) => {
               vote_average={data.vote_average}
             />
           </div>
-          <div className="col-start-10 col-end-12">
-            <p className="text-[22px] font-medium">SIMILAR</p>
-            <div className="h-[700px] overflow-y-auto">
+          <div className="col-span-2 lg:col-span-4 col-end-13">
+            <p className="text-2xl font-medium">SIMILAR</p>
+            <div className="h-[45rem] overflow-y-auto">
               <ItemList items={similar} vertical />
             </div>
           </div>
