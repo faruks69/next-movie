@@ -2,7 +2,6 @@ import Footer from './Layout/Footer';
 import Meta from './Layout/Meta';
 import Navbar from './Layout/Navbar';
 import NavbarLink from './Layout/NavbarLink';
-import Pagination from './Layout/Pagination';
 import Search from './Layout/Search';
 import CastList from './Cast/CastList';
 import CastItem from './Cast/CastItem';
@@ -28,7 +27,6 @@ export {
   Meta,
   Navbar,
   NavbarLink,
-  Pagination,
   Search,
   CastList,
   CastItem,

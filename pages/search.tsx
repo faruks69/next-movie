@@ -47,7 +47,7 @@ const SearchPage: NextPage<Props> = ({ data, page, type, keyword }) => {
         forcePage={page - 1}
         onPageChange={handlePageChange}
         activeClassName="text-main"
-        pageClassName="bg-stone-700 min-w-[32px] text-center"
+        pageClassName="bg-stone-700 min-w-[2.5rem] px-4 py-2 sm:px-6 sm:py-3 text-center text-xl"
       />
     </>
   );
