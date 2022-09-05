@@ -34,7 +34,7 @@ const MainSliderItem = ({ item, isActive }: Props) => {
       <div className="container relative flex-center-center">
         <div
           className={Cn(
-            '[&>*~*]:mt-12 px-12 lg:w-full w-[55%] [&>*]:transition-[transform,opacity] [&>*]:duration-[500ms,500ms] [&>*]:ease-[ease,ease]',
+            '[&>*~*]:mt-12 px-12 lg:w-full w-3/5 [&>*]:transition-[transform,opacity] [&>*]:duration-[500ms,500ms] [&>*]:ease-[ease,ease]',
             isActive
               ? 'scale-100 translate-y-0'
               : '[&>*]:opacity-0 [&>*]:translate-y-[-100px]'

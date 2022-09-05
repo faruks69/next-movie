@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 import Cn from 'classnames';
 
-import { NavbarLink, Search } from '@/components';
+import { NavbarLink, Search, Image } from '@/components';
 
 const Navbar = () => {
   const navbarRef = useRef<HTMLDivElement>(null);
@@ -40,7 +40,7 @@ const Navbar = () => {
             <Link href="/">
               <a className="w-auto font-semibold text-4xl sm:text-2xl flex items-center">
                 <div className="flex mr-2.5">
-                  <img className="w-12" src="/icon.png" alt="" />
+                  <Image className="w-12" src="/icon.png" alt="" />
                 </div>
                 <span>TV FILM</span>
               </a>

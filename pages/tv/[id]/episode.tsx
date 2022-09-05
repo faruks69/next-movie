@@ -6,7 +6,7 @@ import cn from 'classnames';
 import { getTVSeasons } from '@/ultis/tmdbApi';
 import { embedEpisode, w500Image, imageOriginal } from '@/ultis/constants';
 import { TypeTvDetail, Season, Episode } from '@/model/tv';
-import { AboutDetail, Meta } from '@/components';
+import { AboutDetail, Meta, Image } from '@/components';
 
 interface Props {
   data: TypeTvDetail;
@@ -65,7 +65,7 @@ const Watch: NextPage<Props> = ({
                         : setOpenSeason(season.season_number)
                     }
                   >
-                    <img
+                    <Image
                       className="w-[20%] mr-4 rounded-lg"
                       src={w500Image(season.poster_path)}
                       alt=""
@@ -103,7 +103,7 @@ const Watch: NextPage<Props> = ({
                               }
                             )}
                           >
-                            <img
+                            <Image
                               className="w-2/5 mr-2 rounded-xl"
                               src={w500Image(episode.still_path)}
                               alt=""
@@ -163,7 +163,6 @@ export const getServerSideProps: GetServerSideProps = async ({
       },
     };
   } catch (error) {
-    console.log(error);
     return {
       notFound: true,
     };

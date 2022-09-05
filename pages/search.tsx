@@ -82,7 +82,6 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
       },
     };
   } catch (error) {
-    console.log(error);
     return {
       notFound: true,
     };

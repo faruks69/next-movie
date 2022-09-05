@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Fragment, useState } from 'react';
 import cn from 'classnames';
 
-import { AboutDetail, Meta } from '@/components';
+import { AboutDetail, Meta, Image } from '@/components';
 import { getTVSeasons } from '@/ultis/tmdbApi';
 import { w500Image, xEpisodes, imageOriginal } from '@/ultis/constants';
 import { TypeTvDetail, Season } from '@/model/tv';
@@ -27,7 +27,7 @@ const Watch: NextPage<Props> = ({ data, seasons }) => {
           <div className="col-start-3 col-span-8">
             <div className="grid grid-cols-12 gap-4">
               <div className="col-span-3 h-full w-full">
-                <img
+                <Image
                   className="rounded-xl"
                   alt=""
                   src={w500Image(data.poster_path)}
@@ -60,7 +60,7 @@ const Watch: NextPage<Props> = ({ data, seasons }) => {
                   }
                 >
                   <div className="col-span-3">
-                    <img
+                    <Image
                       className="w-full rounded-3xl"
                       alt=""
                       src={w500Image(item.poster_path)}
@@ -111,7 +111,7 @@ const Watch: NextPage<Props> = ({ data, seasons }) => {
                               {episode.episode_number}
                             </p>
                           </div>
-                          <img
+                          <Image
                             className="w-[30%] py-2 rounded-2xl"
                             alt=""
                             src={w500Image(episode.still_path)}
