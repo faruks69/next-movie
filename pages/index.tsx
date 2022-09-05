@@ -21,7 +21,7 @@ const Home: NextPage<Props> = ({ data }) => {
         image="/preview.png"
       />
 
-      <div className="">
+      <div>
         <MainSlider movieItems={data['Popular Movies']} />
         <div className="container px-6">
           {Object.keys(data).map((key) => (

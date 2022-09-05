@@ -53,6 +53,18 @@ iframe {
   border: 0;
 }
 
+// nprogress
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  @apply bg-main fixed z-20 top-0 left-0 w-full h-[3px];
+}
+
+/* Fancy blur effect */
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

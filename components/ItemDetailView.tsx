@@ -65,7 +65,7 @@ const ItemDetailView: NextPage<Props> = ({ data, casts, videos, similar }) => {
         </div>
       </div>
       <div className="container px-6 [&>*~*]:mt-12">
-        <div className="">
+        <div>
           <p className="text-[1.5rem] font-semibold mb-2">CASTS</p>
           <CastList items={casts} />
         </div>
@@ -75,7 +75,7 @@ const ItemDetailView: NextPage<Props> = ({ data, casts, videos, similar }) => {
             <VideoItem key={video.key} item={video} />
           ))}
         </div>
-        <div className="">
+        <div>
           <p className="text-[1.5rem] font-semibold mb-2">SIMILAR</p>
           <ItemList items={similar} />
         </div>

@@ -56,7 +56,7 @@ const Watch: NextPage<Props> = ({
             <p className="text-2xl font-medium">Other Episodes</p>
             <div className="[&>*~*]:mt-6 max-h-[45rem] overflow-y-auto">
               {seasons.map((season) => (
-                <div key={season.id} className="">
+                <div key={season.id}>
                   <div
                     className="flex items-center rounded-lg bg-zinc-900"
                     onClick={() =>

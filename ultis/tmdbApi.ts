@@ -238,4 +238,3 @@ export const searchTV: (
     results: data.results.filter((item: any) => item.poster_path),
   };
 };
-// export default tmdbApi;

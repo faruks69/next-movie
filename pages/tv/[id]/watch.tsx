@@ -83,7 +83,7 @@ const Watch: NextPage<Props> = ({ data, seasons }) => {
                       </div>
                       {item.overview && (
                         <div className="mx-8 my-2">
-                          <p className="">{item.overview}</p>
+                          <p>{item.overview}</p>
                         </div>
                       )}
                     </div>

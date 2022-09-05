@@ -44,8 +44,9 @@ const MainSliderItem = ({ item, isActive }: Props) => {
             {item.title}
           </h2>
           <Rating
+            size={18}
             rating={item.vote_average}
-            className="w-20 text-[1.5rem] delay-[300ms,300ms]"
+            className="w-24 text-[1.5rem] delay-[300ms,300ms]"
           />
 
           <span className="block font-bold delay-[600ms,600ms]">

@@ -25,7 +25,7 @@ const PageHeader: NextPage<Props> = ({
       "
       style={{ backgroundImage: 'url(/footer-bg.jpg)' }}
     >
-      <p className="">
+      <p>
         {isSearchPage ? (
           <>
             Search {typePage(media_type)} by keyword :
