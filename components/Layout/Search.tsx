@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, ChangeEvent } from 'react';
 import { useRouter } from 'next/router';
 import { AiOutlineSearch } from 'react-icons/ai';
 import cn from 'classnames';
@@ -11,7 +11,8 @@ const Search = () => {
   const router = useRouter();
   const [value, setValue] = useState('');
   const [typeFillter, setTypeFillter] = useState<MediaType>('all');
-  const onChange = (e: any) => setValue(e.target.value);
+  const onChange = (e: ChangeEvent<HTMLInputElement>) =>
+    setValue(e.target.value);
   const handleSearch = () => {
     router.push({
       pathname: '/search',

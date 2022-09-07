@@ -3,10 +3,11 @@ import { FaPlayCircle } from 'react-icons/fa';
 
 import { Button, Rating } from '@/components';
 import { MovieItemProps } from '@/model/movie';
+import { TypeTvDetail } from '@/model/tv';
 import { w500Image } from '@/ultis/constants';
 
 interface Props {
-  item: MovieItemProps;
+  item: MovieItemProps | TypeTvDetail;
 }
 
 const ItemCard = ({ item }: Props) => {

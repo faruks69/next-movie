@@ -29,4 +29,5 @@ export interface TypeTvDetail extends Childs {
   }[];
   number_of_episodes: number;
   number_of_seasons: number;
+  media_type: 'tv';
 }

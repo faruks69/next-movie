@@ -3,16 +3,21 @@ import { useRouter } from 'next/router';
 import ReactPaginate from 'react-paginate';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
-import { MediaType } from '@/model/movie';
+import { MediaType, MovieItemProps } from '@/model/movie';
+import { TypeTvDetail } from '@/model/tv';
 import { ItemGrid, PageHeader, Meta } from '@/components';
 import { searchAll, searchMovie, searchTV } from '@/ultis/tmdbApi';
 import { mediaTypes } from '@/ultis/constants';
+
+interface Data {
+  results: MovieItemProps[] | TypeTvDetail[];
+}
 
 interface Props {
   type: MediaType;
   keyword: string;
   page: number;
-  data?: any;
+  data: Data;
 }
 
 const SearchPage: NextPage<Props> = ({ data, page, type, keyword }) => {

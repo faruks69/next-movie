@@ -1,8 +1,9 @@
 import { ItemCard } from '@/components';
 import { MovieItemProps } from '@/model/movie';
+import { TypeTvDetail } from '@/model/tv';
 
 interface Props {
-  items: MovieItemProps[];
+  items: MovieItemProps[] | TypeTvDetail[];
 }
 
 const ItemGrid = ({ items }: Props) => {

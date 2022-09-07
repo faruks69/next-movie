@@ -24,6 +24,7 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "@typescript-eslint/no-non-null-assertion": "off",
     "react/display-name": 0,
     "react/jsx-props-no-spreading": 0,
     "react/state-in-constructor": 0,
@@ -76,6 +77,15 @@
     "no-param-reassign": 2,
     "space-before-function-paren": 0,
     "@next/next/no-img-element": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false,
+        "argsIgnorePattern": "^_"
+      }
+    ],
     "no-unused-vars": [
       "error",
       {

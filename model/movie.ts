@@ -15,7 +15,7 @@ export interface Childs {
 
 export interface MovieItemProps extends Childs {
   adult?: boolean;
-  media_type: 'movie' | 'tv';
+  media_type: 'movie';
 }
 
 export interface Cast {
